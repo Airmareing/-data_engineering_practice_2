@@ -2,7 +2,7 @@ import json
 import msgpack
 import numpy as np
 
-with open('data/products_42.json', 'r') as json_file:
+with open('../data/products_42.json', 'r') as json_file:
     products = json.load(json_file)
 
 aggregated_data = []
@@ -24,10 +24,10 @@ for product in products:
         'min_price': min_price
     })
 
-with open('result/output_data_3.json', 'w') as json_output:
+with open('../result/output_data_3.json', 'w') as json_output:
     json.dump(aggregated_data, json_output, indent=2)
 
-with open('result/output_data_3.msgpack', 'wb') as msgpack_output:
+with open('../result/output_data_3.msgpack', 'wb') as msgpack_output:
     packed_data = msgpack.packb(aggregated_data, use_bin_type=True)
     msgpack_output.write(packed_data)
 

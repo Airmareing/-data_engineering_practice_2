@@ -1,7 +1,7 @@
 import numpy as np
 import json
 
-matrix = np.load('data/matrix_42.npy')
+matrix = np.load('../data/matrix_42.npy')
 
 total_sum = float(np.sum(matrix))
 total_avr = float(np.mean(matrix))
@@ -25,9 +25,9 @@ result = {
     'max': max_value,
     'min': min_value
 }
-with open('result/output_data_1.json', 'w') as json_file:
+with open('../result/output_data_1.json', 'w') as json_file:
     json.dump(result, json_file)
 
 normalized_matrix = (matrix - np.min(matrix)) / (np.max(matrix) - np.min(matrix))
 
-np.save('result/normalized_matrix_1.npy', normalized_matrix)
+np.save('../result/normalized_matrix_1.npy', normalized_matrix)
